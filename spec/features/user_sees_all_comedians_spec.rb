@@ -12,10 +12,17 @@ RSpec.describe 'a user sees comedians page' do
     end
   end
 
-  # context 'visit /comedians to see the average age' do
-  #   it 'they see the average age' do
-  #     visit '/comedians'
-  #     expect(page).to have_content(600)
-  #   end
-  # end
+  context 'visit /comedians to see the average age' do
+    it 'they see the average age' do
+      visit '/comedians'
+      expect(page).to have_content(600)
+    end
+  end
+
+  context 'visit /comedians to and enter params' do
+    it 'they sort find by age' do
+      visit '/comedians?age=1000'
+      expect(page).to have_content('Odin')
+    end
+  end
 end

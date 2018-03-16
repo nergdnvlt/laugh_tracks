@@ -1,6 +1,7 @@
-<% all_comedians.each do |comedian| %>
+<% @all_comedians.each do |comedian| %>
   <ul>
     <li><%= comedian.name %></li>
     <li><%= comedian.age %></li>
   </ul>
 <% end %>
+<p>Average Comedian Age: <%= @all_comedians.average_age %> </p>
